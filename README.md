@@ -1,11 +1,11 @@
 # POKEDEX
 
 Nome dos integrantes: 
-- Pessoa 1
-- Pessoa 2
-- Pessoa 3
+- Leonardo Santino de Lima
+- Ruth Pessoa de Lima
+- Wanuzia de Oliveira Braga
 
-Link do Surge: www.link.com.br
+Link do Surge: <<link do surge>>
 
 O que funciona:
 - Item 1
