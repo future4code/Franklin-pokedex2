@@ -11,7 +11,7 @@ const Router = () => {
         <Header/>
         <Routes>
             <Route path='/' element={<Home/>}/>
-            <Route path='/detalhes/:id' element={<DetailPage />}/>
+            <Route path='/detalhes/:name' element={<DetailPage />}/>
             <Route path='/pokedex' element={<Pokedex />}/>
         </Routes>
         </BrowserRouter>

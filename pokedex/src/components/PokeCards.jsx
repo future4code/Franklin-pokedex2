@@ -7,11 +7,24 @@ import {
     Image,
   
   } from '@chakra-ui/react';
+  import { useEffect, useState } from 'react';
+  import axios from 'axios';
   
-  const IMAGE =
-    'https://images.unsplash.com/photo-1518051870910-a46e30d9db16?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80';
   
  const PokeCards = (props) => {
+  const [image, setImage] = useState([])
+  
+  useEffect(()=>{
+          axios.get(props.url)
+          .then((res)=>{
+              setImage(res.data.sprites.front_default)
+              
+          })
+          .catch((err) =>{
+              console.log(err)
+          })
+      },[props.url])
+  
     return (
         <div>
       <Center py={12}>
@@ -38,7 +51,7 @@ import {
               pos: 'absolute',
               top: 5,
               left: 0,
-              backgroundImage: `url(${IMAGE})`,
+              backgroundImage: `url(${image})`,
               filter: 'blur(15px)',
               zIndex: -1,
             }}
@@ -52,7 +65,7 @@ import {
               height={230}
               width={282}
               objectFit={'cover'}
-              src={IMAGE}
+              src={image  }
             />
           </Box>
           <Stack pt={10} align={'center'}>
