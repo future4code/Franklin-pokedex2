@@ -73,7 +73,7 @@ import {
              {props.name}
             </Heading>
             <Stack direction={'row'} align={'center'}>
-             <button>Adicionar</button>
+             <button onClick={props.addToPokedex}>Adicionar</button>
              <button>Ver detalhes</button>
             </Stack>
           </Stack>
