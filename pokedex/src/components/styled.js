@@ -10,12 +10,13 @@ justify-content: flex-start;
 `
 
 export const LogoPokebola = styled.img`
-    width: 4vh;
+    width: 20vh;
 `
 
 export const PokeButton = styled.button`
     background: none;
     border: none;
     margin: 10px;
+    cursor: pointer;
 `
 
