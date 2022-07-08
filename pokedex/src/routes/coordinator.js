@@ -1,12 +1,10 @@
-import { BASE_URL } from "../constants/urls"
-
 export const goToDetailsPage = (navigate, id) => {
-    navigate(`${BASE_URL}/detalhes/${id}`)
+    navigate(`/detalhes/${id}`)
 }
 
 export const goToLastPage = (navigate) => {
     navigate(-1)
 }
 export const goToPokedex = (navigate) => {
-    navigate(`${BASE_URL}/pokedex`)
+    navigate(`/pokedex`)
 }
