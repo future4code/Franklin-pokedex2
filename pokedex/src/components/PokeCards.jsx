@@ -73,8 +73,8 @@ import {
              {props.name}
             </Heading>
             <Stack direction={'row'} align={'center'}>
-             <button onClick={props.addToPokedex}>Adicionar</button>
-             <button>Ver detalhes</button>
+             <button onClick={props.onClick}>{props.nameButton}</button>
+             <button>Ver Detalhes</button>
             </Stack>
           </Stack>
         </Box>
