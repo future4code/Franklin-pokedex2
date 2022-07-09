@@ -1,77 +1,27 @@
 import { StatisticBar, StatisticName, StatisticValue } from "./styles.jsx";
 import { Table, Tr, Td, Tbody } from "@chakra-ui/react";
 
-function BaseStats() {
+function BaseStats({ stats, color }) {
   return (
     <Table>
       <Tbody>
-        <Tr>
-          <Td>
-            <StatisticName>HP</StatisticName>
-          </Td>
-          <Td>
-            <StatisticValue>039</StatisticValue>
-          </Td>
-          <Td>
-            <StatisticBar src="images/stats-bar.png" />
-          </Td>
-        </Tr>
-        <Tr>
-          <Td>
-            <StatisticName>ATTACK</StatisticName>
-          </Td>
-          <Td>
-            <StatisticValue>052</StatisticValue>
-          </Td>
-          <Td>
-            <StatisticBar src="images/stats-bar.png" />
-          </Td>
-        </Tr>
-        <Tr>
-          <Td>
-            <StatisticName>DEFENSE</StatisticName>
-          </Td>
-
-          <Td>
-            <StatisticValue>043</StatisticValue>
-          </Td>
-          <Td>
-            <StatisticBar src="images/stats-bar.png" />
-          </Td>
-        </Tr>
-        <Tr>
-          <Td>
-            <StatisticName>SPECIAL-ATTACK</StatisticName>
-          </Td>
-          <Td>
-            <StatisticValue>060</StatisticValue>
-          </Td>
-          <Td>
-            <StatisticBar src="images/stats-bar.png" />
-          </Td>
-        </Tr>
-        <Tr>
-          <Td>
-            <StatisticName>SPECIAL-DEFENSE</StatisticName>
-          </Td>
-          <Td>
-            <StatisticValue>050</StatisticValue>
-          </Td>
-          <Td>
-            <StatisticBar src="images/stats-bar.png" />
-          </Td>
-        </Tr>
-        <Tr>
-          <Td>
-            <StatisticName>SPEED</StatisticName>
-          </Td>
-          <Td>
-            <StatisticValue>065</StatisticValue>
-          </Td>
-          <Td>
-            <StatisticBar src="images/stats-bar.png" />
-          </Td>
-        </Tr>
+        {stats?.map((slot, index) => {
+          return (
+            <Tr key={index}>
+              <Td>
+                <StatisticName color={color}>
+                  {slot.stat.name?.toUpperCase()}
+                </StatisticName>
+              </Td>
+              <Td>
+                <StatisticValue>{slot?.base_stat}</StatisticValue>
+              </Td>
+              <Td>
+                <StatisticBar src="/images/stats-bar.png" alt="" />
+              </Td>
+            </Tr>
+          );
+        })}
       </Tbody>
     </Table>
   );

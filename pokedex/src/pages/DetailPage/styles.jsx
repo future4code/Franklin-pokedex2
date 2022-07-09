@@ -1,8 +1,12 @@
 import styled from "styled-components";
 
 export const Container = styled.main`
+  height: 100vh;
+`;
+
+export const GridContainer = styled.div`
   display: grid;
-  grid-template-areas: "img-front skills main-attacks" "img-back skills main-attacks";
+  grid-template-areas: "img-front" "img-back" "skills" "main-attacks";
 
   gap: 16px;
   padding: 16px;
@@ -10,6 +14,14 @@ export const Container = styled.main`
   font-family: "Poppins";
   background: #ffffff7f;
   border-radius: 12px;
+
+  @media only screen and (min-width: 576px) {
+    grid-template-areas: "img-front main-attacks" "img-back main-attacks" "skills skills";
+  }
+
+  @media only screen and (min-width: 768px) {
+    grid-template-areas: "img-front skills main-attacks" "img-back skills main-attacks";
+  }
 `;
 
 export const ImgFront = styled.div`
@@ -18,7 +30,7 @@ export const ImgFront = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f57d31;
+  background: ${(props) => props.color};
 
   border-radius: 12px;
 `;
@@ -29,7 +41,7 @@ export const ImgBack = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f57d31;
+  background: ${(props) => props.color};
 
   border-radius: 12px;
 `;
@@ -42,7 +54,7 @@ export const Skills = styled.div`
   align-items: center;
   padding: 4px;
 
-  background: #f57d31;
+  background: ${(props) => props.color};
   border-radius: 12px;
 `;
 
@@ -53,7 +65,7 @@ export const MainAttacksContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding: 4px;
-  background: #f57d31;
+  background: ${(props) => props.color};
   border-radius: 12px;
 `;
 
@@ -92,7 +104,7 @@ export const Type = styled.div`
   width: 35px;
   height: 20px;
 
-  background: #f57d31;
+  background: ${(props) => props.color};
   border-radius: 10px;
 
   font-weight: 700;

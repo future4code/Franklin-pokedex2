@@ -9,6 +9,7 @@ import {
   } from '@chakra-ui/react';
   import { useEffect, useState } from 'react';
   import axios from 'axios';
+import { Link } from 'react-router-dom';
   
   
  const PokeCards = (props) => {
@@ -74,7 +75,7 @@ import {
             </Heading>
             <Stack direction={'row'} align={'center'}>
              <button onClick={props.onClick}>{props.nameButton}</button>
-             <button>Ver Detalhes</button>
+             <Link to={`/detalhes/${props.name}`}><button>Ver Detalhes</button></Link>
             </Stack>
           </Stack>
         </Box>
