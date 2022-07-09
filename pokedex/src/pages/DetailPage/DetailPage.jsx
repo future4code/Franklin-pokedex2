@@ -13,7 +13,6 @@ import {
 
 import BaseStats from "../../components/BaseStats/BaseStats.jsx";
 import MainAttacks from "../../components/MainAttacks/MainAttacks";
-import Header from "../../components/Header";
 
 function DetailPage() {
   return (
@@ -33,13 +32,13 @@ function DetailPage() {
             <Type>Fire</Type>
             <Type>Grass</Type>
           </TypeContainer>
-          <BaseStats></BaseStats>
+          <BaseStats />
         </WhiteBox>
       </Skills>
 
       <MainAttacksContainer>
         <WhiteBox>
-          <MainAttacks></MainAttacks>
+          <MainAttacks />
         </WhiteBox>
       </MainAttacksContainer>
     </Container>
