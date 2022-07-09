@@ -9,7 +9,7 @@ export const StatisticName = styled.div`
 
   border-right: 1px solid #e0e0e0;
 
-  color: #f57d31;
+  color: ${(props) => props.color};
 `;
 
 export const StatisticValue = styled.div`

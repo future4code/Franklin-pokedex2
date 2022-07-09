@@ -1,16 +1,17 @@
 import { Container, OrangeBox, StatisticName, Title } from "./styles.jsx";
 
-function MainAttacks() {
+function MainAttacks({ moves, color }) {
   return (
     <Container>
-      <Title>Main Attacks</Title>
-      <OrangeBox>
-        <StatisticName>HP</StatisticName>
-        <StatisticName>ATTACK</StatisticName>
-        <StatisticName>DEFENSE</StatisticName>
-        <StatisticName>SPECIAL-ATTACK</StatisticName>
-        <StatisticName>SPECIAL-DEFENSE</StatisticName>
-        <StatisticName>SPEED</StatisticName>
+      <Title color={color}>Main Attacks</Title>
+      <OrangeBox color={color}>
+        {moves?.slice(0, 5).map((slot, index) => {
+          return (
+            <StatisticName key={index}>
+              {slot.move.name?.toUpperCase()}
+            </StatisticName>
+          );
+        })}
       </OrangeBox>
     </Container>
   );
