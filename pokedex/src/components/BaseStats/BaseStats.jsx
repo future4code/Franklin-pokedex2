@@ -1,9 +1,9 @@
-import { StatisticBar, StatisticName, StatisticValue } from "./styles.jsx";
-import { Table, Tr, Td, Tbody } from "@chakra-ui/react";
+import { ProgressBar, StatisticName, StatisticValue } from "./styles.jsx";
+import { Table, Tr, Td, Tbody, Progress } from "@chakra-ui/react";
 
 function BaseStats({ stats, color }) {
   return (
-    <Table>
+    <Table variant={"unstyled"}>
       <Tbody>
         {stats?.map((slot, index) => {
           return (
@@ -17,7 +17,16 @@ function BaseStats({ stats, color }) {
                 <StatisticValue>{slot?.base_stat}</StatisticValue>
               </Td>
               <Td>
-                <StatisticBar src="/images/stats-bar.png" alt="" />
+                <ProgressBar color={color}>
+                  <Progress
+                    value={slot?.base_stat}
+                    size={"sm"}
+                    max={150}
+                    hasStripe
+                    isAnimated
+                    width={150}
+                  />
+                </ProgressBar>
               </Td>
             </Tr>
           );
