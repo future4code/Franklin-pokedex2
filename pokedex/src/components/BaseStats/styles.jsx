@@ -23,3 +23,13 @@ export const StatisticValue = styled.div`
 `;
 
 export const StatisticBar = styled.img``;
+
+export const ProgressBar = styled.div`
+  div {
+    div {
+      background-color: ${(props) => props.color};
+      -webkit-animation: animation-52bxzi 1s linear infinite;
+      animation: animation-52bxzi 1s linear infinite;
+    }
+  }
+`;
