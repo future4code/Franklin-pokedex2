@@ -15,9 +15,10 @@ const Home = ({addPokemon, setAddPokemon}) => {
     const addToPokedex = (pokemon) => {
         const newPokemon = [...addPokemon]
         newPokemon.push(pokemon)
-        setAddPokemon(newPokemon)  
-        let index = pokemons.results.indexOf(pokemon)
+       let index = pokemons.results.indexOf(pokemon)
         pokemons.results.splice(index, 1)
+        setAddPokemon(newPokemon)  
+        console.log(index)
     } 
 
     return(
