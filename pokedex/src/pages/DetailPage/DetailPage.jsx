@@ -19,10 +19,13 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import api from "../../services/api";
 import useColor from "../../hooks/useColor";
+import {usePokedexContext} from "../../contexts/PokedexContext";
+import { removePokemon } from "../../utils/removePokemon";
 
 function DetailPage() {
   const { name } = useParams();
   const { color, setColor } = useColor();
+  const {pokedex, setPokedex} = usePokedexContext();
   const [pokemon, setData] = useState({});
 
   useEffect(() => {
@@ -54,6 +57,11 @@ function DetailPage() {
 
         <Skills color={color}>
           <Name>{pokemon?.name}</Name>
+          <button
+            onClick={() => removePokemon(pokemon?.name, pokedex, setPokedex)}
+          >
+            REMOVE POKEMON
+          </button>
           <WhiteBox>
             <TypeContainer>
               {pokemon.types?.map((slot, index) => {
