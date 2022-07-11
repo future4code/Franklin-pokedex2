@@ -5,36 +5,41 @@ import { CardContainer } from "./styled";
 import { BASE_URL } from "../../constants/urls";
 import Header from "../../components/Header";
 import { useNavigate } from "react-router-dom";
-import {goToPokedex} from "../../routes/coordinator"
+import { goToPokedex } from "../../routes/coordinator";
+import { usePokedexContext } from "../../contexts/PokedexContext";
 
-const Home = ({addPokemon, setAddPokemon}) => {
-    const navigate = useNavigate()
-    const pokemons = useRequestData(`${BASE_URL}/pokemon`, {})
-    
-    
-    const addToPokedex = (pokemon) => {
-        const newPokemon = [...addPokemon]
-        newPokemon.push(pokemon)
-        setAddPokemon(newPokemon)  
-        let index = pokemons.results.indexOf(pokemon)
-        pokemons.results.splice(index, 1)
-    } 
+const Home = () => {
+  const navigate = useNavigate();
+  const pokemons = useRequestData(`${BASE_URL}/pokemon`, {});
+  const { pokedex, setPokedex } = usePokedexContext();
 
-    return(
-        <div>
-        <Header onClick={() => goToPokedex(navigate)}/>
-        <CardContainer> 
-        {pokemons.results && pokemons.results.map((pokemon) => {
-           return ( 
-            <PokeCards key={pokemon.url} name={pokemon.name} url={pokemon.url} onClick={() => addToPokedex(pokemon)}
-            nameButton='Adicionar a Pokedex'/>        
-        ) 
-    } ) }
-        </CardContainer>
-       
-        </div>
-    )
-}
+  const addToPokedex = (pokemon) => {
+    const newPokemon = [...pokedex];
+    newPokemon.push(pokemon);
+    setPokedex(newPokemon);
+    let index = pokemons.results.indexOf(pokemon);
+    pokemons.results.splice(index, 1);
+  };
 
-export default Home
+  return (
+    <div>
+      <Header onClick={() => goToPokedex(navigate)} />
+      <CardContainer>
+        {pokemons.results &&
+          pokemons.results.map((pokemon) => {
+            return (
+              <PokeCards
+                key={pokemon.url}
+                name={pokemon.name}
+                url={pokemon.url}
+                onClick={() => addToPokedex(pokemon)}
+                nameButton="Adicionar a Pokedex"
+              />
+            );
+          })}
+      </CardContainer>
+    </div>
+  );
+};
 
+export default Home;
