@@ -4,11 +4,12 @@ import Header from "../../components/Header";
 import PokeCards from "../../components/PokeCards";
 import { usePokedexContext } from "../../contexts/PokedexContext";
 import { goToLastPage } from "../../routes/coordinator";
+import { updatePokedex } from "../../utils/updatePokedex";
 import { CardContainer } from "../Home/styled";
 
 const Pokedex = () => {
   const navigate = useNavigate();
-  const { pokedex } = usePokedexContext();
+  const { pokedex, setPokedex } = usePokedexContext();
 
   return (
     <div>
@@ -22,6 +23,7 @@ const Pokedex = () => {
                 name={pokemon.name}
                 url={pokemon.url}
                 nameButton="Remover"
+                onClick={() => updatePokedex(pokemon, pokedex, setPokedex)}
               />
             );
           })}
