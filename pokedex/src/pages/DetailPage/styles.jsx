@@ -50,8 +50,8 @@ export const Skills = styled.div`
   grid-area: skills;
 
   display: grid;
-  justify-content: stretch;
-  align-items: center;
+  grid-template-rows: .25fr 2fr;
+
   padding: 4px;
 
   background: ${(props) => props.color};
@@ -88,6 +88,13 @@ export const WhiteBox = styled.div`
   border-radius: 8px;
 `;
 
+export const ButtonContainer = styled.div`
+display: flex;
+justify-content: center;
+margin-top: 16px;
+
+`;
+
 export const TypeContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -101,8 +108,8 @@ export const Type = styled.div`
   justify-content: center;
   padding: 2px 8px;
 
-  width: 35px;
-  height: 20px;
+  min-width: 35px;
+  min-height: 20px;
 
   background: ${(props) => props.color};
   border-radius: 10px;

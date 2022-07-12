@@ -10,6 +10,7 @@ import {
   WhiteBox,
   TypeContainer,
   GridContainer,
+  ButtonContainer,
 } from "./styles";
 
 import BaseStats from "../../components/BaseStats/BaseStats.jsx";
@@ -19,13 +20,11 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import api from "../../services/api";
 import useColor from "../../hooks/useColor";
-import {usePokedexContext} from "../../contexts/PokedexContext";
-import { updatePokedex } from "../../utils/updatePokedex";
+import ButtonStatus from "../../components/ButtonStatus/ButtonStatus";
 
 function DetailPage() {
   const { name } = useParams();
   const { color, setColor } = useColor();
-  const {pokedex, setPokedex} = usePokedexContext();
   const [pokemon, setData] = useState({});
 
   useEffect(() => {
@@ -57,12 +56,11 @@ function DetailPage() {
 
         <Skills color={color}>
           <Name>{pokemon?.name}</Name>
-          <button
-            onClick={() => updatePokedex(pokemon, pokedex, setPokedex)}
-          >
-            REMOVE POKEMON
-          </button>
           <WhiteBox>
+            <ButtonContainer>
+              <ButtonStatus pokemon={pokemon} />
+            </ButtonContainer>
+
             <TypeContainer>
               {pokemon.types?.map((slot, index) => {
                 return (
