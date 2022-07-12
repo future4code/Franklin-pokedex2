@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { goToPokedex } from "../../routes/coordinator";
 import { usePokedexContext } from "../../contexts/PokedexContext";
 
+
 const Home = () => {
   const navigate = useNavigate();
   const pokemons = useRequestData(`${BASE_URL}/pokemon`, {});
