@@ -20,7 +20,7 @@ import { useEffect, useState } from "react";
 import api from "../../services/api";
 import useColor from "../../hooks/useColor";
 import {usePokedexContext} from "../../contexts/PokedexContext";
-import { removePokemon } from "../../utils/removePokemon";
+import { updatePokedex } from "../../utils/updatePokedex";
 
 function DetailPage() {
   const { name } = useParams();
@@ -58,7 +58,7 @@ function DetailPage() {
         <Skills color={color}>
           <Name>{pokemon?.name}</Name>
           <button
-            onClick={() => removePokemon(pokemon?.name, pokedex, setPokedex)}
+            onClick={() => updatePokedex(pokemon, pokedex, setPokedex)}
           >
             REMOVE POKEMON
           </button>
