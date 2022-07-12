@@ -24,11 +24,9 @@ export const OrangeBox = styled.div`
   align-items: center;
   justify-content: center;
 
-  margin-bottom: 8px;
-
   background: ${(props) => props.color};
-  background-image: url("/images/details-background.png");
-  background-position: 325% top;
+  background-image: url("/images/pokeball-transparent.png");
+  background-position: top 50% right 50% ;
   background-repeat: no-repeat;
   border-radius: 12px;
 `;
