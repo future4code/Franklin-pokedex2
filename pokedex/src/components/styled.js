@@ -10,7 +10,7 @@ justify-content: flex-start;
 `
 
 export const LogoPokebola = styled.img`
-    width: 20vh;
+    width: 10vh;
 `
 
 export const PokeButton = styled.button`
@@ -18,5 +18,12 @@ export const PokeButton = styled.button`
     border: none;
     margin: 10px;
     cursor: pointer;
+`
+
+export const PokeLogo = styled.img`
+    padding-top: 10px;
+    width: 236px;
+    height: 10vh;
+    
 `
 
