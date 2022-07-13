@@ -1,11 +1,11 @@
-import { ButtonPage, ButtonsContainer } from "./styles";
+import { ButtonPage } from "./styles";
 
 const Pagination = ({ goToPrevPage, goToNextPage }) => {
   return (
-    <ButtonsContainer>
+    <div>
       {goToPrevPage && <ButtonPage onClick={goToPrevPage}>Previous</ButtonPage>}
       {goToNextPage && <ButtonPage onClick={goToNextPage}>Next</ButtonPage>}
-    </ButtonsContainer>
+    </div>
   );
 };
 
