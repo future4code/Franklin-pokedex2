@@ -56,10 +56,10 @@ const Home = () => {
             );
           })}
       </CardContainer>
-    
     </div>
     <PaginationContainer>
         {goToPrevPage && (
+      {goToPrevPage && (
         <Pagination goToPrevPage={prevPageUrl ? goToPrevPage : null} />
       )}
       {goToNextPage && (
