@@ -15,7 +15,7 @@ import {
 
 import BaseStats from "../../components/BaseStats/BaseStats.jsx";
 import MainAttacks from "../../components/MainAttacks/MainAttacks";
-import Header from "../../components/Header";
+import Header from "../../components/Header/Header";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import api from "../../services/api";

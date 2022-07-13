@@ -1,12 +1,13 @@
 import React from "react";
 import useRequestData from "../../hooks/useRequestData";
-import PokeCards from "../../components/PokeCards";
+import PokeCards from "../../components/PokeCards/PokeCards";
 import { CardContainer } from "./styled";
 import { BASE_URL } from "../../constants/urls";
-import Header from "../../components/Header";
+import Header from "../../components/Header/Header";
 import { useNavigate } from "react-router-dom";
 import { goToPokedex } from "../../routes/coordinator";
 import { usePokedexContext } from "../../contexts/PokedexContext";
+import PokeLogo from "../../components/PokeLogo/PokeLogo";
 
 
 const Home = () => {
@@ -24,7 +25,7 @@ const Home = () => {
 
   return (
     <div>
-      <Header onClick={() => goToPokedex(navigate)} />
+      <Header onClick={() => goToPokedex(navigate)} children={<PokeLogo/>} />
       <CardContainer>
         {pokemons.results &&
           pokemons.results.map((pokemon) => {
