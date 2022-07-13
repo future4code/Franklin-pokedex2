@@ -8,3 +8,8 @@ export const CardContainer = styled.div`
     background-color: #ededed;
     
 `
+export const PaginationContainer = styled.div`
+display: flex;
+align-items: center;
+justify-content: center;
+`

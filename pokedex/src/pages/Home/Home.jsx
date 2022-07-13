@@ -1,7 +1,7 @@
 import React from "react";
 import useRequestData from "../../hooks/useRequestData";
 import PokeCards from "../../components/PokeCards/PokeCards";
-import { CardContainer } from "./styled";
+import { CardContainer, PaginationContainer } from "./styled";
 import { BASE_URL } from "../../constants/urls";
 import Header from "../../components/Header/Header";
 import { useNavigate } from "react-router-dom";
@@ -40,6 +40,7 @@ const Home = () => {
 
   return (
     <div>
+       <div>
       <Header onClick={() => goToPokedex(navigate)} children={<PokeLogo />} />
             <CardContainer>
         {pokemons.results &&
@@ -55,12 +56,16 @@ const Home = () => {
             );
           })}
       </CardContainer>
+    </div>
+    <PaginationContainer>
+        {goToPrevPage && (
       {goToPrevPage && (
         <Pagination goToPrevPage={prevPageUrl ? goToPrevPage : null} />
       )}
       {goToNextPage && (
         <Pagination goToNextPage={nextPageUrl ? goToNextPage : null} />
       )}
+    </PaginationContainer>
     </div>
   );
 };
