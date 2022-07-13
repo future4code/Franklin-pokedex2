@@ -8,13 +8,28 @@ import { useNavigate } from "react-router-dom";
 import { goToPokedex } from "../../routes/coordinator";
 import { usePokedexContext } from "../../contexts/PokedexContext";
 import PokeLogo from "../../components/PokeLogo/PokeLogo";
-
+import { useEffect, useState } from "react";
+import Pagination from "../../components/PaginationButton/PaginationButton";
 
 const Home = () => {
   const navigate = useNavigate();
-  const pokemons = useRequestData(`${BASE_URL}/pokemon`, {});
+  const [currentPageUrl, setCurrentPageUrl] = useState(`${BASE_URL}/pokemon`);
+  const [nextPageUrl, setNextPageUrl] = useState();
+  const [prevPageUrl, setPrevPageUrl] = useState();
+  const pokemons = useRequestData(currentPageUrl, {});
   const { pokedex, setPokedex } = usePokedexContext();
 
+  useEffect(() => {
+    setNextPageUrl(pokemons.next);
+    setPrevPageUrl(pokemons.previous);
+  }, [pokemons]);
+
+  function goToNextPage() {
+    setCurrentPageUrl(nextPageUrl);
+  }
+  function goToPrevPage() {
+    setCurrentPageUrl(prevPageUrl);
+  }
   const addToPokedex = (pokemon) => {
     const newPokemon = [...pokedex];
     newPokemon.push(pokemon);
@@ -25,8 +40,8 @@ const Home = () => {
 
   return (
     <div>
-      <Header onClick={() => goToPokedex(navigate)} children={<PokeLogo/>} />
-      <CardContainer>
+      <Header onClick={() => goToPokedex(navigate)} children={<PokeLogo />} />
+            <CardContainer>
         {pokemons.results &&
           pokemons.results.map((pokemon) => {
             return (
@@ -40,6 +55,12 @@ const Home = () => {
             );
           })}
       </CardContainer>
+      {goToPrevPage && (
+        <Pagination goToPrevPage={prevPageUrl ? goToPrevPage : null} />
+      )}
+      {goToNextPage && (
+        <Pagination goToNextPage={nextPageUrl ? goToNextPage : null} />
+      )}
     </div>
   );
 };
