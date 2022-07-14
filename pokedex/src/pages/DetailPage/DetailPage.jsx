@@ -16,14 +16,16 @@ import {
 import BaseStats from "../../components/BaseStats/BaseStats.jsx";
 import MainAttacks from "../../components/MainAttacks/MainAttacks";
 import Header from "../../components/Header/Header";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import api from "../../services/api";
 import useColor from "../../hooks/useColor";
 import ButtonStatus from "../../components/ButtonStatus/ButtonStatus";
+import PokeBall from "../../components/PokeBall/PokeBall";
 
 function DetailPage() {
   const { name } = useParams();
+  const navigate = useNavigate();
   const { color, setColor } = useColor();
   const [pokemon, setData] = useState({});
 
@@ -40,7 +42,10 @@ function DetailPage() {
 
   return (
     <Container>
-      <Header />
+      <Header
+        onClick={() => navigate(-1)}
+        children={<PokeBall img={"/images/pokeball.png"} />}
+      />
       <GridContainer>
         <ImgFront color={color}>
           <Image
