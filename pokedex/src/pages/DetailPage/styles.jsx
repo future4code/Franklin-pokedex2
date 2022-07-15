@@ -70,7 +70,10 @@ export const MainAttacksContainer = styled.div`
 `;
 
 export const Name = styled.div`
-  text-align: center;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
   color: #ffffff;
   font-weight: 700;
   font-size: 24px;

@@ -8,7 +8,7 @@ function MainAttacks({ moves, color }) {
         {moves?.slice(0, 5).map((slot, index) => {
           return (
             <StatisticName key={index}>
-              {slot.move.name?.toUpperCase()}
+              {slot.move?.name}
             </StatisticName>
           );
         })}

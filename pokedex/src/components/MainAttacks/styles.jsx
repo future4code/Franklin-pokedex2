@@ -32,6 +32,7 @@ export const OrangeBox = styled.div`
 `;
 
 export const StatisticName = styled.div`
+  text-transform: uppercase;
   font-weight: 700;
   font-size: 12px;
   line-height: 16px;

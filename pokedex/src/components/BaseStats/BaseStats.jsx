@@ -10,7 +10,7 @@ function BaseStats({ stats, color }) {
             <Tr key={index}>
               <Td>
                 <StatisticName color={color}>
-                  {slot.stat.name?.toUpperCase()}
+                  {slot.stat?.name}
                 </StatisticName>
               </Td>
               <Td>

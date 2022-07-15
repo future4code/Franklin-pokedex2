@@ -24,6 +24,7 @@ export const Name = styled.div`
   justify-content: center;
   align-items: center;
   height: 32px;
+  text-transform: uppercase;
   font-weight: 400;
   font-size: 16px;
   line-height: 16px;

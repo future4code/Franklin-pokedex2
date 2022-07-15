@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const StatisticName = styled.div`
   padding-right: 12px;
+  text-transform: uppercase;
   font-weight: 700;
   font-size: 10px;
   line-height: 16px;
