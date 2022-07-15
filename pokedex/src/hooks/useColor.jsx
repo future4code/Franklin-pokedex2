@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 function useColor() {
-  const [color, setColor] = useState("");
+  const [color, setColor] = useState("#ffffff");
 
   useEffect(() => {
     switch (color) {
