@@ -19,7 +19,7 @@ const PokeCard = ({ pokemonCard }) => {
       .catch((error) => {
         console.log(error);
       });
-  },[pokemonCard.name]);
+  },[pokemonCard.name, setColor]);
 
   return (
     <Container color={color}>
