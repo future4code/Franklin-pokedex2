@@ -29,6 +29,33 @@ function useColor() {
       case "steel":
         setColor("#FB5584");
         break;
+      case "poison":
+        setColor("#A43E9E");
+        break;
+      case "ground":
+        setColor("#DEC16B");
+        break;
+      case "fairy":
+        setColor("#E69EAC");
+        break;
+      case "rock":
+        setColor("#B69E31");
+        break;
+      case "fighting":
+        setColor("#C12239");
+        break;
+      case "dragon":
+        setColor("#7037FF");
+        break;
+      case "ice":
+        setColor("#9AD6DF");
+        break;
+      case "dark":
+        setColor("#75574C");
+        break;
+      case "flying":
+        setColor("#A891EC");
+        break;
       case "normal":
         setColor("#AAA67F");
         break;
