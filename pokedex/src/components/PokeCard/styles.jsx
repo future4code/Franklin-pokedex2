@@ -6,7 +6,7 @@ export const Container = styled.div`
 
   font-family: "Poppins";
   background: #ffffff;
-  border: 1px solid #74cb48;
+  border: 1px solid ${(props) => props.color};
   border-radius: 8px;
 `;
 
@@ -30,5 +30,5 @@ export const Name = styled.div`
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
   color: #ffffff;
-  background: #74cb48;
+  background: ${(props) => props.color};
 `;
