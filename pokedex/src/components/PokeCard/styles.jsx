@@ -5,9 +5,21 @@ export const Container = styled.div`
   gap: 8px;
 
   font-family: "Poppins";
-  background: #ffffff;
+  background: ${(props) => props.color};
   border: 1px solid ${(props) => props.color};
   border-radius: 8px;
+
+  img {
+    height: 150px;
+    width: 150px;
+  }
+
+  @media only screen and (min-width: 576px) {
+    img {
+      height: 200px;
+      width: 200px;
+    }
+  }
 `;
 
 export const Image = styled.img``;

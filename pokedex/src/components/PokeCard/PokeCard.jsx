@@ -26,7 +26,7 @@ const PokeCard = ({ pokemonCard }) => {
       <ButtonContainer>
         <ButtonStatus pokemon={pokemon} />
       </ButtonContainer>
-      <Image src={pokemon.sprites?.front_default} height={200} width={200} />
+      <Image src={pokemon.sprites?.front_default} />
       <Link to={`/detalhes/${pokemon?.name}`}>
         <Name color={color}>{pokemon?.name}</Name>
       </Link>
