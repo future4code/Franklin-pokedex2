@@ -14,7 +14,7 @@ Nome dos integrantes:
 
 Link do Surge: https://knotty-hall.surge.sh/
 
-O que funciona  <img width=20px heidht=35px src="https://cdn-icons-png.flaticon.com/512/1484/1484625.png" />:
+O que funciona  <img width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/512/1484/1484625.png" />:
 - Adicionar Pokemon na Pokedex
 - Excluir Pokemon da Pokedex
 - Ver detalhes dos Pokemons
